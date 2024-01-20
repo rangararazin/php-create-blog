@@ -1,25 +1,36 @@
-<!DOCTYPE html>
+<x-layout>
 
+    @foreach($posts as $post)
 
-<title>Laravel</title>
-<link rel="stylesheet" href="/app.css">
+        <article>
+            <h1>
+                <a href="/posts/{{ $post->id }}">
+                    {{ $post->title}}
+                </a>
+            </h1>
+            <div>
+                {{$post->excerpt}}
+            </div>
 
+        </article>
+    @endforeach
 
-<body>
+</x-layout>
+{{--@extends('components.layout')--}}
 
-@foreach($posts as $post)
-<article>
-    <h1>
-        <a href="/posts/{!! $post->slug; !!}  ">
-                {!!  $post->title; !!}
-        </a>
-    </h1>
-    <div>
-            {!! $post->excerpt; !!}
-    </div>
+{{--@section('content')--}}
+{{--    @foreach($posts as $post)--}}
 
-</article>
+{{--        <article>--}}
+{{--            <h1>--}}
+{{--                <a href="/posts/{{ $post->slug }}">--}}
+{{--                    {{ $post->title}}--}}
+{{--                </a>--}}
+{{--            </h1>--}}
+{{--            <div>--}}
+{{--                {{$post->excerpt}}--}}
+{{--            </div>--}}
 
-@endforeach
-</body>
-
+{{--        </article>--}}
+{{--    @endforeach--}}
+{{--@endsection--}}

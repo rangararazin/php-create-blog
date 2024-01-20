@@ -1,24 +1,32 @@
-<!DOCTYPE html>
+<x-layout>
+    <article>
+        <h1>
+            {{$post->title}}
+        </h1>
 
+        <div>
+            {!!  $post->body !!}
+        </div>
+    </article>
 
-<title>Laravel</title>
-<link rel="stylesheet" href="/app.css">
+    <a href="/">Go back</a>
+</x-layout>
 
+{{--@extends('components.layout')--}}
 
-<body>
-<article>
-   <h1>
-       <?= $post->title; ?>
-   </h1>
+{{--@section('content')--}}
+{{--    <article>--}}
+{{--        <h1>--}}
+{{--            {{$post->title}}--}}
+{{--        </h1>--}}
 
-    <div>
-        <?= $post->body; ?>
-    </div>
-</article>
+{{--        <div>--}}
+{{--            {!!  $post->body !!}--}}
+{{--        </div>--}}
+{{--    </article>--}}
 
-<a href="/">Go back</a>
+{{--    <a href="/">Go back</a>--}}
 
-</body>
-
+{{--@endsection--}}
 
 
